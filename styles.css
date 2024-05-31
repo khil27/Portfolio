@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    overflow: hidden;
+    background-color: rgb(18, 18, 18);;
+    padding: 2px;
+    margin: 20px;
+    font-family: monospace, sans-serif;
+}
+
+.header h1{
+    color: white;
+    font-size: var(--small-font-size);
+    cursor: pointer;
+    position: absolute;
+}
+
+
+.header a{
+    color: white;
+    font-size: var(--small-font-size);
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    font-style: bold;
+}
+.header a::after{
+    color: white;
+    content: '';
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: #009dff;
+    transition: width .2s;
+    position: absolute;
+}
+
+.header a:hover::after{
+    width: 100%;
+}
+
+.nav{
+    float: right;
+}
+
+p{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+    pointer-events: none;
+    font-size: 4em;
+    font-weight: 700;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+
+@media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
+
+/* Mouse Trail Start*/
+
+.cursor {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    backdrop-filter: invert(1) grayscale(1);
+    -webkit-backdrop-filter: invert(1) grayscale(1);
+    z-index: 99999;
+}
+
+
+.is-open{
+    clip-path: circle(200% at 100% 100%);
+    transition: clip-path 1.3s ease-in;
+    transition-timing-function: cubic-bezier(1,-0.01,.01,.99);
+}
+  /* Mouse Trail End*/
